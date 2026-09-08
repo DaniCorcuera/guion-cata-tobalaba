@@ -6,18 +6,23 @@
 <title>La Cata Llegó a Tobalaba — Guion Reel</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+  /* ============================================================
+     Estructura original del guion (artesanal)
+     + Identidad Lecualab: Verdigris #1dadb5 · Tangerine #f28f31
+       Jet #3a3a3a · Lavender #EEE5E9 · Tipografía Quicksand
+     ============================================================ */
   :root {
-    --cream: #FAF6EF;
-    --cream-2: #F3ECDF;
-    --ink: #211B14;
-    --ink-soft: #5C5244;
-    --copper: #B56727;
-    --copper-dark: #8F4F1C;
-    --amber: #E8A54B;
-    --green: #3E5C46;
-    --line: #E4DACA;
+    --lavender: #EEE5E9;
+    --lavender-2: #E6DDE2;
+    --ink: #3a3a3a;
+    --ink-soft: #6B6B6B;
+    --verdigris: #1dadb5;
+    --verdigris-dark: #168e95;
+    --tangerine: #f28f31;
+    --paper: #FBF8F9;
+    --line: #E4DDE0;
     --white: #FFFFFF;
     --radius: 20px;
   }
@@ -27,10 +32,10 @@
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    background: var(--cream);
+    font-family: 'Quicksand', system-ui, -apple-system, sans-serif;
+    background: var(--paper);
     color: var(--ink);
-    line-height: 1.6;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -43,7 +48,7 @@
   /* ============ HEADER ============ */
   .hero {
     padding: 72px 0 56px;
-    background: var(--cream);
+    background: var(--paper);
     border-bottom: 1px solid var(--line);
   }
 
@@ -55,7 +60,7 @@
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    color: var(--copper-dark);
+    color: var(--verdigris-dark);
     margin-bottom: 20px;
   }
 
@@ -63,32 +68,37 @@
     content: "";
     width: 28px;
     height: 2px;
-    background: var(--copper);
+    background: var(--verdigris);
   }
 
   .hero h1 {
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: clamp(42px, 8vw, 72px);
-    line-height: 1.02;
+    line-height: 1.05;
     letter-spacing: -1.5px;
     margin-bottom: 16px;
   }
 
   .hero h1 .amp {
-    color: var(--copper);
+    color: var(--verdigris);
     font-style: italic;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .hero h1 .accent {
-    color: var(--copper);
+    color: var(--verdigris);
   }
 
   .hero .subtitle {
     font-size: 18px;
+    font-weight: 500;
     color: var(--ink-soft);
     max-width: 560px;
+  }
+
+  .hero .subtitle strong {
+    font-weight: 700;
+    color: var(--ink);
   }
 
   .hero-badges {
@@ -114,16 +124,16 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: var(--copper);
+    background: var(--verdigris);
   }
 
   .badge.highlight {
     background: var(--ink);
-    color: var(--cream);
+    color: var(--paper);
     border-color: var(--ink);
   }
 
-  .badge.highlight .dot { background: var(--amber); }
+  .badge.highlight .dot { background: var(--tangerine); }
 
   /* ============ SECTIONS ============ */
   section { padding: 48px 0; }
@@ -133,12 +143,11 @@
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--copper-dark);
+    color: var(--verdigris-dark);
     margin-bottom: 12px;
   }
 
   .section-title {
-    font-family: 'Fraunces', serif;
     font-size: clamp(28px, 4.5vw, 40px);
     font-weight: 700;
     letter-spacing: -0.5px;
@@ -159,10 +168,9 @@
   .script li:first-child { border-top: 1px solid var(--line); }
 
   .script .time {
-    font-family: 'Fraunces', serif;
     font-size: 15px;
     font-weight: 700;
-    color: var(--copper-dark);
+    color: var(--verdigris-dark);
     padding-top: 2px;
   }
 
@@ -177,6 +185,7 @@
 
   .script .text {
     font-size: 16px;
+    font-weight: 500;
     line-height: 1.55;
   }
 
@@ -187,17 +196,17 @@
 
   .script .text .on-screen {
     display: inline-block;
-    background: var(--cream-2);
+    background: var(--lavender);
     border: 1px solid var(--line);
     padding: 2px 10px;
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--copper-dark);
+    color: var(--verdigris-dark);
   }
 
   .script li.gancho {
-    background: linear-gradient(90deg, rgba(232,165,75,0.14), transparent);
+    background: linear-gradient(90deg, rgba(242,143,49,0.12), transparent);
     border-radius: 12px;
     padding-left: 14px;
     padding-right: 14px;
@@ -205,12 +214,12 @@
     margin-bottom: 4px;
   }
 
-  .script li.gancho .time { color: var(--copper); }
+  .script li.gancho .time { color: var(--tangerine); }
 
   /* ============ CALL OUT ============ */
   .callout {
     background: var(--ink);
-    color: var(--cream);
+    color: var(--paper);
     border-radius: var(--radius);
     padding: 40px 32px;
     text-align: center;
@@ -219,14 +228,14 @@
 
   .callout .small {
     font-size: 12px;
+    font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--tangerine);
     margin-bottom: 12px;
   }
 
   .callout .big {
-    font-family: 'Fraunces', serif;
     font-size: clamp(30px, 5vw, 44px);
     font-weight: 700;
     line-height: 1.15;
@@ -235,7 +244,8 @@
   .callout .sub {
     margin-top: 12px;
     font-size: 15px;
-    color: rgba(250,246,239,0.7);
+    font-weight: 500;
+    color: rgba(251,248,249,0.75);
   }
 
   /* ============ SHOT LIST ============ */
@@ -251,10 +261,9 @@
   }
 
   .shots .num {
-    font-family: 'Fraunces', serif;
     font-size: 20px;
     font-weight: 700;
-    color: var(--copper);
+    color: var(--verdigris);
   }
 
   .shots .name {
@@ -266,7 +275,7 @@
     display: block;
     font-size: 13px;
     color: var(--ink-soft);
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 2px;
   }
 
@@ -294,10 +303,10 @@
   }
 
   .tip h4 {
-    font-family: 'Fraunces', serif;
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
+    color: var(--ink);
   }
 
   .tip ul {
@@ -306,6 +315,7 @@
 
   .tip li {
     font-size: 14px;
+    font-weight: 500;
     color: var(--ink-soft);
     padding: 3px 0 3px 18px;
     position: relative;
@@ -315,17 +325,18 @@
     content: "→";
     position: absolute;
     left: 0;
-    color: var(--copper);
+    color: var(--verdigris);
     font-weight: 600;
   }
 
   /* ============ NOTE ============ */
   .note {
-    background: var(--cream-2);
-    border-left: 4px solid var(--copper);
+    background: var(--lavender);
+    border-left: 4px solid var(--verdigris);
     border-radius: 0 16px 16px 0;
     padding: 20px 24px;
     font-size: 14px;
+    font-weight: 500;
     color: var(--ink-soft);
     margin-top: 40px;
   }
@@ -341,7 +352,7 @@
 
   /* ============ FOOTER ============ */
   footer {
-    background: var(--cream-2);
+    background: var(--lavender);
     border-top: 1px solid var(--line);
     padding: 48px 0;
     margin-top: 32px;
@@ -349,24 +360,24 @@
   }
 
   footer .brand {
-    font-family: 'Fraunces', serif;
     font-size: 22px;
     font-weight: 700;
     color: var(--ink);
   }
 
-  footer .brand span { color: var(--copper); }
+  footer .brand span { color: var(--verdigris); }
 
   footer .tag {
     font-size: 14px;
+    font-weight: 500;
     color: var(--ink-soft);
     margin-top: 6px;
   }
 
   footer .tag i {
     font-style: italic;
-    font-weight: 600;
-    color: var(--copper-dark);
+    font-weight: 700;
+    color: var(--verdigris-dark);
   }
 
   /* ============ RESPONSIVE ============ */
