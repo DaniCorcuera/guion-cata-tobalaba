@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Cata Llegó a Tobalaba — Guion Reel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #FAF6EF;
+    --cream-2: #F3ECDF;
+    --ink: #211B14;
+    --ink-soft: #5C5244;
+    --copper: #B56727;
+    --copper-dark: #8F4F1C;
+    --amber: #E8A54B;
+    --green: #3E5C46;
+    --line: #E4DACA;
+    --white: #FFFFFF;
+    --radius: 20px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ HEADER ============ */
+  .hero {
+    padding: 72px 0 56px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    margin-bottom: 20px;
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background: var(--copper);
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -1.5px;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 .amp {
+    color: var(--copper);
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .hero h1 .accent {
+    color: var(--copper);
+  }
+
+  .hero .subtitle {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 560px;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--copper);
+  }
+
+  .badge.highlight {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+  }
+
+  .badge.highlight .dot { background: var(--amber); }
+
+  /* ============ SECTIONS ============ */
+  section { padding: 48px 0; }
+
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--copper-dark);
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 4.5vw, 40px);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+
+  /* ============ SCRIPT TIMELINE ============ */
+  .script { list-style: none; }
+
+  .script li {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .script li:first-child { border-top: 1px solid var(--line); }
+
+  .script .time {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--copper-dark);
+    padding-top: 2px;
+  }
+
+  .script .shot {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  .script .text {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .script .text .who {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .script .text .on-screen {
+    display: inline-block;
+    background: var(--cream-2);
+    border: 1px solid var(--line);
+    padding: 2px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--copper-dark);
+  }
+
+  .script li.gancho {
+    background: linear-gradient(90deg, rgba(232,165,75,0.14), transparent);
+    border-radius: 12px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border-bottom: 1px solid transparent;
+    margin-bottom: 4px;
+  }
+
+  .script li.gancho .time { color: var(--copper); }
+
+  /* ============ CALL OUT ============ */
+  .callout {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    text-align: center;
+    margin: 8px 0;
+  }
+
+  .callout .small {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--amber);
+    margin-bottom: 12px;
+  }
+
+  .callout .big {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .callout .sub {
+    margin-top: 12px;
+    font-size: 15px;
+    color: rgba(250,246,239,0.7);
+  }
+
+  /* ============ SHOT LIST ============ */
+  .shots { list-style: none; }
+
+  .shots li {
+    display: grid;
+    grid-template-columns: 40px 1fr 120px;
+    gap: 16px;
+    align-items: baseline;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .shots .num {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--copper);
+  }
+
+  .shots .name {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .shots .desc {
+    display: block;
+    font-size: 13px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .shots .type {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align: right;
+  }
+
+  /* ============ TIPS ============ */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .tip {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .tip h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .tip ul {
+    list-style: none;
+  }
+
+  .tip li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    padding: 3px 0 3px 18px;
+    position: relative;
+  }
+
+  .tip li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--copper);
+    font-weight: 600;
+  }
+
+  /* ============ NOTE ============ */
+  .note {
+    background: var(--cream-2);
+    border-left: 4px solid var(--copper);
+    border-radius: 0 16px 16px 0;
+    padding: 20px 24px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 40px;
+  }
+
+  .note strong {
+    display: block;
+    color: var(--ink);
+    margin-bottom: 4px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--cream-2);
+    border-top: 1px solid var(--line);
+    padding: 48px 0;
+    margin-top: 32px;
+    text-align: center;
+  }
+
+  footer .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  footer .brand span { color: var(--copper); }
+
+  footer .tag {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  footer .tag i {
+    font-style: italic;
+    font-weight: 600;
+    color: var(--copper-dark);
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 0 40px; }
+    .script li { grid-template-columns: 68px 1fr; gap: 14px; }
+    .shot-type { display: none; }
+    .shots li { grid-template-columns: 32px 1fr; }
+    .shots .num { font-size: 18px; }
+    .tip { padding: 20px; }
+    .callout { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============ HERO ============ -->
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow">Reel · Instagram · Septiembre</div>
+      <h1>La Cata Llegó<br>a <span class="accent">Tobalaba</span></h1>
+      <p class="subtitle">Botillería Tobalaba presenta la cata de <strong>Cervecería El Regreso</strong> — la primera activación de producto en el local, hecha para la comunidad.</p>
+      <div class="hero-badges">
+        <span class="badge highlight"><span class="dot"></span>Viernes 11 · 20:00 – 22:30</span>
+        <span class="badge"><span class="dot"></span>~43 segundos</span>
+        <span class="badge"><span class="dot"></span>Invita el dueño</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ GUION ============ -->
+  <section id="guion">
+    <div class="container">
+      <div class="section-label">El guión</div>
+      <h2 class="section-title">Secuencia del reel</h2>
+
+      <ul class="script">
+        <li class="gancho">
+          <span class="time">0:00 – 0:03</span>
+          <div>
+            <div class="shot">Gancho · Dueño mira a cámara</div>
+            <p class="text"><span class="who">DUEÑO:</span> "Vecinos, ¿saben qué viene el viernes?"</p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:03 – 0:08</span>
+          <div>
+            <div class="shot">Dueño sigue hablando</div>
+            <p class="text"><span class="who">DUEÑO:</span> "Viene una cervecería artesanal a Tobalaba y vamos a hacer una cata para que la conozcan"</p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:08 – 0:13</span>
+          <div>
+            <div class="shot">Insert · Foto de las latas</div>
+            <p class="text"><span class="on-screen">Cervecería El Regreso — Cervezas artesanales</span></p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:13 – 0:18</span>
+          <div>
+            <div class="shot">Pan por la estantería</div>
+            <p class="text"><span class="who">DUEÑO (V.O.):</span> "Ellos van a tener su stand acá, van a traer todas las variedades para que puedan probar"</p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:18 – 0:23</span>
+          <div>
+            <div class="shot">Insert · Otra foto de latas</div>
+            <p class="text"><span class="on-screen">Van a poder probar Y comprar desde ese día</span></p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:23 – 0:28</span>
+          <div>
+            <div class="shot">Dueño · Fecha y hora</div>
+            <p class="text"><span class="who">DUEÑO:</span> "El viernes 11, de 8 a 10 y media de la noche. Vengan a probar, a pasarla bien con los vecinos"</p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:28 – 0:33</span>
+          <div>
+            <div class="shot">Plano general del local</div>
+            <p class="text"><span class="on-screen">Viernes 11 · 20:00 – 22:30</span></p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:33 – 0:38</span>
+          <div>
+            <div class="shot">Cierre · Sonrisa</div>
+            <p class="text"><span class="who">DUEÑO:</span> "¡Los esperamos, vecinos!"</p>
+          </div>
+        </li>
+        <li>
+          <span class="time">0:38 – 0:43</span>
+          <div>
+            <div class="shot">End card · Logos + dirección</div>
+            <p class="text"><span class="on-screen">Botillería Tobalaba · [dirección]</span></p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="callout">
+        <div class="small">El sello</div>
+        <div class="big">"¡Los esperamos, vecinos!"</div>
+        <div class="sub">La comunidad es el corazón — siempre se habla bien, siempre se espera con cariño.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLAN DE GRABACION ============ -->
+  <section id="plan">
+    <div class="container">
+      <div class="section-label">Producción</div>
+      <h2 class="section-title">Plan de grabación · 6 planos en 20 minutos</h2>
+
+      <ul class="shots">
+        <li>
+          <span class="num">1</span>
+          <div class="name">Fachada de Tobalaba<span class="desc">La entrada, el letrero, la esquina</span></div>
+          <span class="type">Exterior</span>
+        </li>
+        <li>
+          <span class="num">2</span>
+          <div class="name">Dueño — explicación<span class="desc">Que cuente qué pasa el viernes (2–3 tomas)</span></div>
+          <span class="type">Interior</span>
+        </li>
+        <li>
+          <span class="num">3</span>
+          <div class="name">Dueño — cierre<span class="desc">"¡Los esperamos, vecinos!" con sonrisa (2–3 tomas)</span></div>
+          <span class="type">Interior</span>
+        </li>
+        <li>
+          <span class="num">4</span>
+          <div class="name">Estantería / local<span class="desc">Pan recorriendo el espacio y las estanterías</span></div>
+          <span class="type">Interior</span>
+        </li>
+        <li>
+          <span class="num">5</span>
+          <div class="name">Otro ángulo del local<span class="desc">Plano más abierto, que se vea la vibra</span></div>
+          <span class="type">Interior</span>
+        </li>
+        <li>
+          <span class="num">6</span>
+          <div class="name">Fotos de las latas<span class="desc">Inserts en edición con zoom suave (Ken Burns)</span></div>
+          <span class="type">Insert</span>
+        </li>
+      </ul>
+
+      <div class="note">
+        <strong>Nota</strong>
+        Las fotos de las latas de El Regreso se usan como inserts entre los planos del dueño en edición. No se necesita cerveza física para grabar este reel.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIPS ============ -->
+  <section id="tips">
+    <div class="container">
+      <div class="section-label">Para tener en cuenta</div>
+      <h2 class="section-title">Tips de grabación y edición</h2>
+
+      <div class="tips-grid">
+        <div class="tip">
+          <h4>El dueño</h4>
+          <ul>
+            <li>Hablar natural, como a un amigo</li>
+            <li>Tres tomas mínimo por frase</li>
+            <li>La energía vale más que la perfección</li>
+            <li>Mirar a la lente</li>
+          </ul>
+        </div>
+        <div class="tip">
+          <h4>Técnica</h4>
+          <ul>
+            <li>Grabar en 4K</li>
+            <li>Cada plano mínimo 5 segundos</li>
+            <li>Estabilizador o superficie estable</li>
+            <li>Audio limpio, sin ruido de fondo</li>
+          </ul>
+        </div>
+        <div class="tip">
+          <h4>Edición</h4>
+          <ul>
+            <li>Cortes secos, ritmo rápido</li>
+            <li>Texto grande y legible en celular</li>
+            <li>Música que no tape la voz</li>
+            <li>Subtítulos siempre</li>
+          </ul>
+        </div>
+        <div class="tip">
+          <h4>Fotos de producto</h4>
+          <ul>
+            <li>Ken Burns: zoom lento al 105%</li>
+            <li>Inserts de 4–5 segundos</li>
+            <li>Transiciones con corte seco</li>
+            <li>Buena resolución de las fotos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div class="container">
+      <div class="brand">Botillería <span>Tobalaba</span></div>
+      <p class="tag">Guión de producción · Cata Cervecería El Regreso · <i>¡Nos vemos, vecinos!</i></p>
+    </div>
+  </footer>
+
+</body>
+</html>
